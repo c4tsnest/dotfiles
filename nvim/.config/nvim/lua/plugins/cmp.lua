@@ -36,12 +36,13 @@
 -- }
 return {
 	"saghen/blink.cmp",
+	build = 'cargo build --release',
 	opts = {
-		snippets = {
-			expand = function(snippet, _)
-				return LazyVim.cmp.expand(snippet)
-			end,
-		},
+		-- snippets = {
+		-- 	expand = function(snippet, _)
+		-- 		return LazyVim.cmp.expand(snippet)
+		-- 	end,
+		-- },
 		appearance = {
 			use_nvim_cmp_as_default = false,
 			nerd_font_variant = "mono",
@@ -66,7 +67,6 @@ return {
 			},
 		},
 		sources = {
-			compat = {},
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
 		cmdline = {

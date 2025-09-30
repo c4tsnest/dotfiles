@@ -14,17 +14,21 @@ return {
 				filetypes = { "c", "cpp", "objc", "objcpp" },
 				-- capabilities = capabilities,
 				on_attach = function(client, bufnr)
-					local opts = { noremap = true, silent = true }
-					vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-					vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-					vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+					-- local map = vim.keymap.set
+					-- local opts = { noremap = true, silent = true }
+					-- map("n", "<leader>ds", "<cmd>Telescope lsp_document_symbols<CR>", opts)
+					-- map("n", "<leader>ws", "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", opts)
+					-- vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
+					-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+					-- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+					-- vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
 				end,
 			})
 
 			-- Python
-			lspconfig.pyright.setup()
+			lspconfig.pyright.setup({})
 
-			-- Lua (Neovim 用)
+			-- Lua
 			lspconfig.lua_ls.setup({
 				settings = {
 					Lua = {

@@ -1,0 +1,36 @@
+return {
+	-- "folke/which-key.nvim",
+	-- event = "VeryLazy",
+	-- config = function()
+	-- 	local wk = require("which-key")
+	--
+	-- 	wk.setup({
+	-- 		plugins = {
+	-- 			marks = true,
+	-- 			registers = true,
+	-- 			spelling = {
+	-- 				enabled = true,
+	-- 				suggestions = 20,
+	-- 			},
+	-- 		},
+	-- 		window = {
+	-- 			border = "rounded",
+	-- 			position = "bottom",
+	-- 			margin = { 1, 0, 1, 0 },
+	-- 			padding = { 2, 2, 2, 2 },
+	-- 		},
+	-- 		layout = {
+	-- 			align = "left",
+	-- 		},
+	-- 	})
+	--
+	-- 	wk.register({
+	-- 		f = { name = "file" },
+	-- 		g = { name = "git" },
+	-- 		l = { name = "lsp" },
+	-- 		b = { name = "buffer" },
+	-- 		c = { name = "code" },
+	-- 		t = { name = "toggle" },
+	-- 	}, { prefix = "<leader>" })
+	-- end,
+}
