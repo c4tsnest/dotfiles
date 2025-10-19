@@ -27,6 +27,22 @@ return {
 
 			-- Python
 			lspconfig.pyright.setup({})
+			lspconfig.ruff.setup({})
+
+			lspconfig.tinymist.setup({})
+
+			lspconfig.verible.setup({
+				cmd = { "verible-verilog-ls", "--rules_config_search" },
+				settings = {
+					verible = {
+						lint = {
+							rules = {
+								disable = { "no-tabs" }
+							}
+						}
+					}
+				}
+			})
 
 			-- Lua
 			lspconfig.lua_ls.setup({
@@ -60,7 +76,7 @@ return {
 		dependencies = { "williamboman/mason.nvim" },
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "pyright", "lua_ls", "clangd" },
+				ensure_installed = { "pyright", "lua_ls", "clangd", "verible", "ruff", "tinymist" },
 				automatic_installation = true,
 			})
 		end,
