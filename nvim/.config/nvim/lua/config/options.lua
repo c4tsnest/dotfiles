@@ -5,6 +5,7 @@ vim.o.clipboard = "unnamedplus"
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+vim.o.autoread = true
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()

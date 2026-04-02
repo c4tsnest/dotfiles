@@ -3,7 +3,6 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("nvim-tree").setup({
-			-- 設定例
 			sort_by = "name",
 			view = {
 				width = 30,
@@ -14,6 +13,7 @@ return {
 			},
 			filters = {
 				dotfiles = false,
+				git_ignored = false,
 			},
 		})
 

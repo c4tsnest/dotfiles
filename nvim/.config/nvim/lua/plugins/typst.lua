@@ -24,13 +24,13 @@ return {
 	{
 		"chomosuke/typst-preview.nvim",
 		config = function()
-			-- require("typst-preview").setup({
-			-- 	open_cmd =
-			-- 	[[sh -c '
-			-- 	r_panel_id=$(wezterm cli split-pane --right)
-			-- 	echo "curl -sL \"%s\" -o /tmp/typst-preview.pdf && tdf /tmp/typst-preview.pdf" | wezterm cli send-text --no-paste --pane-id $r_panel_id 			        '
-			-- 	]],
-			-- })
+			require("typst-preview").setup({
+				open_cmd = "firefox % s",
+				-- [[sh -c '
+				-- 	r_panel_id=$(wezterm cli split-pane --right)
+				-- 	echo "curl -sL \"%s\" -o /tmp/typst-preview.pdf && tdf /tmp/typst-preview.pdf" | wezterm cli send-text --no-paste --pane-id $r_panel_id 			        '
+				-- ]],
+			})
 		end,
 		ft = "typst",
 		-- build = function()

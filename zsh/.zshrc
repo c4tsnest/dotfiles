@@ -3,7 +3,7 @@
 # export PATH=$PATH:$HOME/.robotech/bin:$HOME/.robotech/flatbuffers/bin:$HOME/.robotech/grpc/bin:$HOME/satellite/build:/home/robotech/.local/bin
 # export CPATH=/usr/include/eigen3
 
-export PATH=$PATH:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/home/tota/opt/tdf/target/release/:/usr/local/bin:/home/tota/opt/qcad-3.30.1-trial-linux-qt5.14-x86_64:/home/tota/.local/bin/oritool:$HOME/Robotech/control/satellite/build:$HOME/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin:$HOME/RoboTech/control/satellite/build:$HOME/Downloads/amap.32.ubuntu2104.x64.GTK
+export PATH=$PATH:$HOME/.cargo/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/home/tota/opt/tdf/target/release/:/usr/local/bin:/home/tota/opt/qcad-3.30.1-trial-linux-qt5.14-x86_64:/home/tota/.local/bin/oritool:$HOME/Robotech/control/satellite/build:$HOME/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin:$HOME/RoboTech/control/satellite/build:$HOME/Downloads/amap.32.ubuntu2104.x64.GTK:/opt/nvim/:/usr/local/MATLAB/R2025b/bin:/opt/gowin/IDE/bin
 
 
 export SATELLITE_ECAT_IFNAME_1='eth1'
@@ -79,6 +79,12 @@ ide(){
   tmux  split-window -h -p 50 #新しく作成されたペインをさらに水平に分割
 }
 
+gowin(){
+    export LD_LIBRARY_PATH=/opt/gowin/IDE/lib:$LD_LIBRARY_PATH
+    export QT_PLUGIN_PATH=/opt/gowin/IDE/lib/Qt/plugins
+    gw_ide
+}
+
 alias nyc="sudo -E nyan_checker"
 alias nic="sudo -E nyan_id_rewrite -c"
 alias nil="sudo -E nyan_id_rewrite -l"
@@ -113,5 +119,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# source /tools/Xilinx/Vivado/2024.2/settings64.sh
-
+source /tools/Xilinx/Vivado/2024.2/settings64.sh
