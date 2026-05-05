@@ -16,8 +16,5 @@ return {
 				git_ignored = false,
 			},
 		})
-
-		-- <leader>e でトグル
-		vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle File Explorer" })
 	end,
 }

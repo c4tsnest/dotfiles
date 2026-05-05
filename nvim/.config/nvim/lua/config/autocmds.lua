@@ -5,10 +5,15 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = { "*.c", "*.cpp", "*.h", "*.hpp", "*.py", "*.lua", "*.v", "*.rs" },
-	callback = function()
+	pattern = { "*.c", "*.cpp", "*.h", "*.hpp", "*.py", "*.lua", "*.v", "*.sv", "*.rs" },
+	callback = function(args)
 		if vim.b.format_on_save then
-			vim.lsp.buf.format({ async = false })
+			-- vim.lsp.buf.format({ async = false })
+			require("conform").format({
+				bufnr = args.buf,
+				lsp_fallback = true,
+				async = false
+			})
 		end
 		-- 	if not vim.b.format_on_save then
 		-- 		return

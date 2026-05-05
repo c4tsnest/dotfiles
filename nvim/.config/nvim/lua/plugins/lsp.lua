@@ -31,18 +31,27 @@ return {
 
 			lspconfig.tinymist.setup({})
 
-			lspconfig.verible.setup({
-				cmd = { "verible-verilog-ls", "--rules_config_search" },
-				settings = {
-					verible = {
-						lint = {
-							rules = {
-								disable = { "no-tabs" }
-							}
-						}
-					}
-				}
-			})
+			-- lspconfig.verible.setup({
+			-- cmd = { "verible-verilog-ls", "--rules_config_search" },
+			-- on_new_config = function(new_config, new_root_dir)
+			-- 	local format_rules_path = new_root_dir .. "/.rules.verible_format"
+			--
+			-- 	if vim.fn.filereadable(format_rules_path) == 1 then
+			-- 		table.insert(new_config.cmd, "--flagfile=" .. format_rules_path)
+			-- 	end
+			-- end,
+			-- settings = {
+			-- 	verible = {
+			-- 		lint = {
+			-- 			rules = {
+			-- 				disable = { "no-tabs" }
+			-- 			}
+			-- 		}
+			-- 	}
+			-- }
+			-- })
+			-- lspconfig.svls.setup({})
+
 
 			-- Lua
 			lspconfig.lua_ls.setup({
