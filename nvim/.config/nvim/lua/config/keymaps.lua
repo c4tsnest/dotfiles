@@ -29,7 +29,7 @@ local function get_copilot_term()
 
 	local Terminal = require("toggleterm.terminal").Terminal
 	copilot_term = Terminal:new({
-		cmd = "opencode",
+		cmd = "codex",
 		direction = "vertical",
 		hidden = true,
 		close_on_exit = false,
