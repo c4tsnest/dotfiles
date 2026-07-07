@@ -30,6 +30,7 @@ return {
 			lspconfig.ruff.setup({})
 
 			lspconfig.tinymist.setup({})
+			lspconfig.rust_analyzer.setup({})
 
 			-- lspconfig.verible.setup({
 			-- cmd = { "verible-verilog-ls", "--rules_config_search" },
