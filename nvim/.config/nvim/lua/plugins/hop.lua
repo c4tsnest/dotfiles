@@ -2,11 +2,18 @@ return {
 	"smoka7/hop.nvim",
 	version = "*",
 	opts = {
-		multi_windows = true,
+		multi_windows = false,
 		keys = 'etovxqpdygfblzhckisuran',
 	},
 	keys = {
-		{ "<leader>h", "<cmd>HopWord<CR>",    mode = "n", desc = "Hop Word" },
+		{
+			"<leader>h",
+			function()
+				require("utils.japanese_hop").hint_words()
+			end,
+			mode = "n",
+			desc = "Hop Word (MeCab)",
+		},
 		-- { "<leader>l", "<cmd>HopLine<CR>", mode = "n", desc = "Hop Line" },
 		-- { "<leader>c", "<cmp>HopChar1<CR>", mode = "n", desc = "Hop Char" },
 		{ "<leader>p", "<cmd>HopPattern<CR>", mode = "n", desc = "Hop Pattern" },
