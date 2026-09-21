@@ -7,7 +7,7 @@ return {
 		config = function()
 			-- Install your required language parsers
 			require("nvim-treesitter").install({
-				"lua", "python", "javascript", "typescript", "c", "cpp", "html", "css"
+				"lua", "python", "javascript", "typescript", "c", "cpp", "html", "css", "typst"
 			})
 
 			-- Enable Native Highlighting globally

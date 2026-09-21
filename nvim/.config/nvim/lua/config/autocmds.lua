@@ -55,17 +55,11 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 			on_exit = function(_, code)
 				if code == 0 then
 					vim.cmd("checktime")
-					vim.notify("typstyle formatted " .. file)
-				else
-					vim.notify("typstyle exited with code " .. code, vim.log.levels.ERROR)
+					-- vim.notify("typstyle formatted " .. file)
+					-- else
+					-- vim.notify("typstyle exited with code " .. code, vim.log.levels.ERROR)
 				end
 			end,
-			-- on_stderr = function(_, data)
-			-- 	if data and #data > 0 then
-			-- 		vim.notify("typstyle stderr:\n" .. table.concat(data, "\n"), vim.log.levels
-			-- 			.ERROR)
-			-- 	end
-			-- end,
 		})
 	end,
 })

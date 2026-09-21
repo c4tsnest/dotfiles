@@ -29,7 +29,32 @@ return {
 			lspconfig.pyright.setup({})
 			lspconfig.ruff.setup({})
 
-			lspconfig.tinymist.setup({})
+			lspconfig.tinymist.setup({
+				settings = {
+					semanticTokens = "disable",
+					projectResolution = "lockDatabase",
+
+				},
+				on_attach = function(client, bufnr)
+					client.server_capabilities.semanticTokensProvider = nil
+					vim.keymap.set("n", "<leader>tp", function()
+						client:exec_cmd({
+							title = "pin",
+							command = "tinymist.pinMain",
+							arguments = { vim.api.nvim_buf_get_name(0) },
+						}, { bufnr = bufnr })
+					end, { desc = "[T]inymist [P]in", noremap = true })
+
+					vim.keymap.set("n", "<leader>tu", function()
+						client:exec_cmd({
+							title = "unpin",
+							command = "tinymist.pinMain",
+							arguments = { vim.v.null },
+						}, { bufnr = bufnr })
+					end, { desc = "[T]inymist [U]npin", noremap = true })
+				end,
+			})
+
 			lspconfig.rust_analyzer.setup({})
 
 			-- lspconfig.verible.setup({
