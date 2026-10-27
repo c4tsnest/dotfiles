@@ -61,6 +61,9 @@ map("n", "gf", "<C-i>", opts)
 
 map("n", "gd", vim.lsp.buf.definition, opts)
 
+map("n", "<leader>go", "<cmd>DiffviewOpen<CR>", { noremap = true, silent = true, desc = "Open Diffview" })
+map("n", "<leader>gc", "<cmd>DiffviewClose<CR>", { noremap = true, silent = true, desc = "Close Diffview" })
+
 map("n", "<leader>gg", function()
 	local Terminal = require("toggleterm.terminal").Terminal
 	Terminal:new({
